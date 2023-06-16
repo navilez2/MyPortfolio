@@ -11,10 +11,11 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
         border: 1px solid rgba(0, 0, 0, 0.1); /* Adiciona uma borda */
         border-radius: 4px;
-        margin-top: 2rem;
+         margin: 2rem;
+ /*        margin-top: 2rem;
         margin-left: 12rem;
         margin-right: 10rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2rem; */
     }
 
         .cardContainer button {
