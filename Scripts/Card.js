@@ -1,19 +1,19 @@
 var DivCont = 0;
     function addCard(id, title, subTitle, srcImage, divBaseButtonName) {
         // Cria os elementos
-        var divCard = document.createElement('div');
-        var divCardBody = document.createElement('div');
-        var divCardBodyText = document.createElement('div');
-        var baseDivButton = document.createElement('button');
-        var closeButton = document.createElement('a');
-        var infoButton = document.createElement('a');
-        var Title = document.createElement('h5');
-        var SubTitle = document.createElement('p');
-        var userID = document.createElement('input');
-        var imageElement = document.createElement('img');
+        let divCard = document.createElement('div');
+        let divCardBody = document.createElement('div');
+        let divCardBodyText = document.createElement('div');
+        let baseDivButton = document.createElement('button');
+        let closeButton = document.createElement('a');
+        let infoButton = document.createElement('a');
+        let Title = document.createElement('h5');
+        let SubTitle = document.createElement('p');
+        let userID = document.createElement('input');
+        let imageElement = document.createElement('img');
 
         // Obtém a referência à div onde deseja adicionar o HTML
-        var cardContainer = document.getElementById('cardContainer');
+        let cardContainer = document.getElementById('cardContainer');
 
         //Configura as Divs
         componentConfig(divCard, 'card_#' + DivCont, 'card', 'card cardConfig');
@@ -104,8 +104,8 @@ var DivCont = 0;
     //==============================================================
     function limparDiv(element) {
 
-        var botaoApagar = document.getElementById(element);
-        var divCard = botaoApagar.parentNode;
+        let botaoApagar = document.getElementById(element);
+        let divCard = botaoApagar.parentNode;
 
         cardContainer.removeChild(divCard);
 
@@ -131,12 +131,12 @@ var DivCont = 0;
         'Consultor de TI', 'Especialista em Big Data', 'Especialista em Cibersegurança', 'Gerente de Infraestrutura de TI', 'Especialista em Internet das Coisas (IoT)']
 
     function gerarNomeAleatorio() {
-        var nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
-        var sobrenomeAleatorio = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
+        let nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
+        let sobrenomeAleatorio = sobrenomes[Math.floor(Math.random() * sobrenomes.length)];
         return nomeAleatorio + ' ' + sobrenomeAleatorio;
     }
     function gerarCargoAleatorio() {
-        var cargoAleatorio = cargos[Math.floor(Math.random() * cargos.length)];
+        let cargoAleatorio = cargos[Math.floor(Math.random() * cargos.length)];
 
         return cargoAleatorio
     }
@@ -145,11 +145,11 @@ var DivCont = 0;
     }
 
     function abrirModal(id, nome, nota, listaComportamento, observacao) {
-        var modal = new bootstrap.Modal(document.getElementById('modalAvaliar'));
-        var nomeUsuario = document.getElementById('nomeUsuario');
-        var userID = document.getElementById('userID');
-        var txtNota = document.getElementById('txtNota');
-        var notaAtual = document.getElementById('notaAtual');
+        let modal = new bootstrap.Modal(document.getElementById('modalAvaliar'));
+        let nomeUsuario = document.getElementById('nomeUsuario');
+        let userID = document.getElementById('userID');
+        let txtNota = document.getElementById('txtNota');
+        let notaAtual = document.getElementById('notaAtual');
         txtNota.value = nota;
         notaAtual.innerHTML = txtNota.value;
         nomeUsuario.textContent = nome;
