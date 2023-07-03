@@ -13,6 +13,14 @@
     <title>Página Inicial</title>
 
     <style>
+        @font-face {
+            font-family: 'Archivo Black';
+            src: url(Fonts/ArchivoBlack-Regular.ttf);
+        }
+    </style>
+
+
+    <style>
         body {
             background-image: url("images/wall.jpg");
             background-size: cover;
@@ -36,63 +44,41 @@
 
 
 <body>
-    <article>
-        <div class="sectionContainer">
-            <section id="Main" class="section">
-                <div class="center">
-                    <img src="images/Nathan.jpeg" class="imagem" />
-                    <h1 style="background-color: transparent;">Bem-vindo ao meu portifólio</h1>
-                    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: transparent;">
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link" onclick="scrollToSection('SobreMim')">Sobre Mim</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        onclick="scrollToSection('Desenvolvimentos')">Desenvolvimentos</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </section>
-
-            <section id="SobreMim" class="section">
-                <div class="containerInicio">
-                    <a class="btn btnInicio" data-bs-toggle="tooltip" data-bs-placement="top" title="Início"
-                        onclick="scrollToSection('Main')">&#9650</a>
-                </div>
-            </section>
-
-            <section id="Desenvolvimentos" class="section">
-                <div class="containerInicio">
-                    <a class="btn btnInicio" data-bs-toggle="tooltip" data-bs-placement="top" title="Início"
-                        onclick="scrollToSection('Main')">&#9650</a>
-                </div>
-                <div class="devContainer">
-                    <div class="card pageCard" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Avaliação Comportamental</h5>
-                            <div class="cardBodyText custom-scrollbar">
-                                <p class="card-text">Um componente no qual o usuário é capaz de avaliar outras
-                                    pessoas.<br /><a class="card-link" href="">Ver mais...</a></p>
-                            </div>
-                        </div>
-                        <a href="Card.html" class="btn btn-primary btnVisitar">Visitar &#10148</a>
+    <div class="m-3 text-lg-center">
+        <h1>Portifólio</h1>
+    </div>
+    <section id="Desenvolvimentos" class="section">
+        <div class="devContainer">
+            <div class="card pageCard" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Cadastro de Usuário</h5>
+                    <div class="cardBodyText custom-scrollbar">
+                        <p class="card-text">Um componente no qual o usuário é capaz de cadastrar usuários e exibi-los em forma de "Card"</p>
                     </div>
                 </div>
-            </section>
+                <a href="Card.html" class="btn btn-primary btnVisitar">Visitar &#10148</a>
+            </div>
+            <div class="card pageCard" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">TabPage</h5>
+                    <div class="cardBodyText custom-scrollbar">
+                        <p class="card-text">Um componente que separa as paginas por guias</p>
+                    </div>
+                </div>
+                <a href="TabPage.html" class="btn btn-primary btnVisitar">Visitar &#10148</a>
+            </div>
+            <div class="card pageCard" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">API - CRUD Usuário</h5>
+                    <div class="cardBodyText custom-scrollbar">
+                        <p class="card-text">Essa API tem como objetivo realizar todas as operações CRUD utilizando a arquitetura REST e o framework .NET CORE</p>
+                    </div>
+                </div>
+                <a href="https://github.com/navilez2/API-s/tree/main/CardUsersAPI/CardUsersAPI" class="btn btn-primary btnVisitar">Visitar &#10148</a>
+            </div>
+            
         </div>
-
-
-    </article>
-
-    <script>
-
-    </script>
-
-
+    </section>
 
 </body>
 

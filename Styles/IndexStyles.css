@@ -1,4 +1,5 @@
 
+
 .custom-scrollbar::-webkit-scrollbar {
     width: 8px;
     /* largura da barra de rolagem */
@@ -62,8 +63,24 @@
 .sectionContainer {
     height: 100vh;
     width: 100%;
-    overflow-y: scroll;
     scroll-snap-type: y mandatory;
+}
+.textContainer{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centralizar{
+    height: 200px;
+    width: 200px;
+    display: grid;
+    place-items: center;
+}
+h1{
+    font-family: 'Archivo Black', sans-serif;
+    color: black;
 }
 
 .section {

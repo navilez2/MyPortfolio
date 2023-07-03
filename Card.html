@@ -9,56 +9,167 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="Scripts/Card.js"></script>
+    <script src="Scripts/TabPage.js"></script>
     <link rel="stylesheet" href="Styles/CardStyles.css" />
     <title>Card</title>
 </head>
 
 <body>
-    
-    <div id="componenteCard" style="width: 100%;" class="centerDiv">
-        <button id="botaoAdicionar" href="#" class="btn btn-dark" style="margin-bottom:10px">Adicionar</button>
-        <div id="cardContainer" class="cardContainer custom-scrollbar;">
+    <nav class="navbar bg-dark border-bottom border-bottom-dark" data-bs-theme="dark"">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Portifólio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="TabPage.html">TabPage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://github.com/navilez2/API-s/tree/main/CardUsersAPI/CardUsersAPI">API - CRUD Usuário</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div id="modalAvaliar" class="modal" tabindex="-1">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="nomeUsuario"></h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </nav>
+
+
+
+    <div id='divCadastro' style="margin: 1.5rem;" class="collapse show">
+        <div id="tabPage">
+            <div id="tabPageHeader">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" aria-current="page" data-type="header-button"
+                            data-target="cadastroUsuarioContent" data-default-page="true">Cadastrar Usuário</button>
+                    </li>
+                    <li class="nav-item" style="display: none;">
+                        <button class="nav-link" aria-current="page" data-type="header-button"
+                            data-target="cadastroComportamentoContent">Cadastrar Comportamento</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="tabPageContent" style="width: 100%;">
+                <div class="collapse collapse-vertical show" id="cadastroUsuarioContent" data-type="page">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col">
+                            <input id="txtNome" type="text" required class="form-control" placeholder="Nome"
+                                aria-label="nome">
+                        </div>
+                        <div class="col">
+                            <input id="txtEmail" type="email" required class="form-control" placeholder="Email"
+                                aria-label="email">
+                        </div>
+                        <div class="col">
+                            <input id="txtCargo" type="text" required class="form-control" placeholder="Cargo"
+                                aria-label="cargo">
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <input id="userID" type="hidden" />
-                            <div class="mb-3">
-                                <label for="txtNota" class="col-form-label">Nota</label>
-                                <div id="rangeNota" class="rangeScore">
-                                    <input type="range" class="form-range form-control" min="0" max="10" step="1"
-                                        id="txtNota">
-                                    <span id="notaAtual"></span>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="txtObesrvacao" class="col-form-label">Observação</label>
-                                <textarea class="form-control" id="txtObesrvacao"></textarea>
-                            </div>
-                        </form>
+                    <div class="" style="width: max-content;float: right; margin-top: 10px;">
+                        <button id="btoCadastrarUsuario" type="button" class="btn btn-dark"
+                            type="button">Cadastrar</button>
                     </div>
-                    <div class="modal-footer">
-                        <button id="btnFechar" type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Fechar</button>
-                        <button id="btnSalvar" type="button" class="btn btn-dark">Salvar Alterações</button>
+                </div>
+
+                <div class="collapse collapse-vertical" id="cadastroComportamentoContent" data-type="page">
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col" style="margin-right: -1.5rem;">
+                            <input type="text" required="true" class="form-control" placeholder="Comportamento"
+                                aria-label="Comportamento">
+                        </div>
+                        <div class="col" style="margin-top: 0.2rem;">
+                            <button style="background-color: transparent;border: none;">
+                                <img src="images/plus.png" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="" style="width: max-content;float: right; margin-top: 10px;">
+                        <button type="button" class="btn btn-dark" type="button">Cadastrar</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <button id="btoDivCadastro" class="btn btn-dark" type="button" data-bs-toggle="collapse"
+        data-bs-target="#divCadastro" aria-expanded="true" aria-controls="divCadastro"
+        style="width: 100%;border-radius: 0%;height: 29px; padding: 0; background-color: transparent;border-bottom: 1px solid #DEE2E6;border-top: none;border-left: none;border-right: none;color: black;">
+        ▲
+    </button>
+
+    <div id="cardContainer" class="cardContainer centerDiv custom-scrollbar;"></div>
+
+    <div id="modalAvaliar" class="modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="nomeUsuario"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input id="userID" type="hidden" />
+                        <div class="mb-3">
+                            <label for="txtNota" class="col-form-label">Nota</label>
+                            <div id="rangeNota" class="rangeScore">
+                                <input type="range" class="form-range form-control" min="0" max="10" step="1"
+                                    id="txtNota">
+                                <span id="notaAtual"></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtObesrvacao" class="col-form-label">Observação</label>
+                            <textarea class="form-control" id="txtObesrvacao"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnFechar" type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Fechar</button>
+                    <button id="btnSalvar" type="button" class="btn btn-dark">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <script>
-        document.getElementById('txtNota').addEventListener('input', function () {
+        var txtNota = document.getElementById('txtNota');
+        var btoCadastrarUsuario = document.getElementById('btoCadastrarUsuario');
+        var divCadastro = document.getElementById('divCadastro');
+        var btoDivCadastro = document.getElementById('btoDivCadastro');
+        var pageCadastrarUsuario = document.getElementById('pageCadastrarUsuario');
+        var pageCadastrarComportamento = document.getElementById('pageCadastrarComportamento');
+
+        var nome = document.getElementById('txtNome')
+        var cargo = document.getElementById('txtCargo')
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabPage = new TabPage(document.getElementById('tabPage'))
+            tabPage.Init();
+        })
+
+        txtNota.addEventListener('input', function () {
             notaAtual.textContent = txtNota.value;
         });
-        document.getElementById('botaoAdicionar').addEventListener('click', function () {
-            addCard(DivCont, gerarNomeAleatorio(), gerarCargoAleatorio(), '', 'Avaliar')
+        btoCadastrarUsuario.addEventListener('click', function () {
+            addCard(DivCont, nome.value, cargo.value, '', 'Avaliar')
         });
+
+        divCadastro.addEventListener('hidden.bs.collapse', function () {
+            btoDivCadastro.textContent = '▼'
+        });
+        divCadastro.addEventListener('shown.bs.collapse', function () {
+            btoDivCadastro.textContent = '▲'
+        });
+
+
     </script>
 </body>
 
